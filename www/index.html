@@ -1,0 +1,119 @@
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>Felica reader for JS</title>
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+        
+        <script type="importmap">
+    {
+      "imports": {
+        "@material/web/": "https://esm.run/@material/web/"
+      }
+    }
+</script>
+
+<script type="module">
+    import '@material/web/all.js';
+    import {styles as typescaleStyles} from '@material/web/typography/md-typescale-styles.js';
+
+    document.adoptedStyleSheets.push(typescaleStyles.styleSheet);
+</script>
+
+        <script src="./main.js"></script>
+    </head>
+
+    <body>
+        <div class="view" id="view">
+            <span id="check">
+                <svg xmlns="http://www.w3.org/2000/svg" height="96px" viewBox="0 -960 960 960" width="96px" fill="azure"><path d="M378-246 154-470l43-43 181 181 384-384 43 43-427 427Z"/></svg>
+            </span>
+            <span id="waiting">
+                <md-circular-progress indeterminate></md-circular-progress>
+            </span>
+        </div>
+        
+        <div class="noto-sans-jp-qlarte" id="seq1">
+            <center>
+                <md-filled-tonal-button id="startButton" onclick="start()">
+                    クリックでスタート
+                    <svg slot="icon" xmlns="http://www.w3.org/2000/svg" height="96px" viewBox="0 -960 960 960" width="96px" fill="azure"><path d="M468-240q-96-5-162-74t-66-166q0-100 70-170t170-70q97 0 166 66t74 163l-63-20q-11-64-60-106.5T480-660q-75 0-127.5 52.5T300-480q0 67 42.5 116.5T449-303l19 63ZM821-60 650-231 600-80 480-480l400 120-151 50 171 171-79 79Z"/></svg>
+                </md-filled-tonal-button>
+            </center>
+
+            <h1>カードリーダ SONY RC-S380 を準備してください</h1>
+                <h2>zadig等で WinUSBドライバ を割り当てたデバイスが必要です</h2>
+        </div>
+        
+        <div class="noto-sans-jp-qlarte" id="seq2">
+            <h1>ダイアログから SONY RC-S380 を接続してください...</h1>
+                <h2>zadig等で WinUSBドライバ を割り当てたデバイスを選択します</h2>
+        </div>
+        
+        <div class="noto-sans-jp-qlarte" id="seq3">
+            <h1>初期化しています</h1>
+        </div>
+        
+        <div class="noto-sans-jp-qlarte" id="seq4">
+            <h1>Felicaをかざしてください...</h1>
+        </div>
+        
+        <div class="noto-sans-jp-qlarte" id="seq5">
+            <h1>IDm: <span id="idm"></span></h1>
+                <h2>このまま別のカードも読み取れます</h2>
+        </div>
+            
+    </body>
+
+<style>
+:root {
+    --md-circular-progress-size: 78px;
+    --md-sys-color-primary: azure;
+}
+
+body{
+    color: azure;
+    background: rgb(221,237,230);
+    background: radial-gradient(circle, rgb(30, 80, 90) 0%, rgba(53,60,104,1) 100%);
+}
+
+h1 {
+      text-align: center;
+      font-size: 40px;
+      font-weight: 500;
+      margin: 0;
+}
+
+h2 {
+      text-align: center;
+      font-size: 26px;
+      font-weight: 500;
+      margin: 0;
+}
+  
+p{
+      text-align: center;
+      font-weight: 200;
+      margin: 0;
+}
+
+.noto-sans-jp-qlarte {
+    font-family: "Noto Sans JP", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+}
+
+.view{
+    text-align: center;
+}
+
+div{
+    margin: 24px;
+}
+
+
+</style>
+</html>
